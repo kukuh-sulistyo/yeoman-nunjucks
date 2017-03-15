@@ -76,7 +76,6 @@ gulp.task('views', () => {
     .pipe(reload({stream: true}))
 })
 gulp.task('views:reload', ['views'], () => {
-  console.log('reload cuyy......');
   reload();
 })
 
@@ -172,7 +171,7 @@ gulp.task('wiredep', () => {
     }))
     .pipe(gulp.dest('app/styles'));
 
-  gulp.src('app/layouts/*.njk')
+  gulp.src('app/nunjucks/*.njk')
     .pipe(wiredep({
       exclude: ['bootstrap-sass'],
       ignorePath: /^(\.\.\/)*\.\./,
