@@ -76,6 +76,7 @@ gulp.task('views', () => {
     .pipe(reload({stream: true}))
 })
 gulp.task('views:reload', ['views'], () => {
+  console.log('reload cuyy......');
   reload();
 })
 
@@ -127,7 +128,7 @@ gulp.task('serve', ['views', 'styles', 'scripts', 'fonts'], () => {
     '.tmp/fonts/**/*'
   ]).on('change', reload);
 
-  gulp.watch('app/**/*.{html, njk}', ['views:reload']);
+  gulp.watch('app/**/*.njk', ['views:reload']);
   gulp.watch('app/styles/**/*.scss', ['styles']);
   gulp.watch('app/scripts/**/*.js', ['scripts']);
   gulp.watch('app/fonts/**/*', ['fonts']);
